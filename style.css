@@ -103,6 +103,7 @@ footer a {
     section {
         width: 90%;
         margin: auto;
+        height: auto;
         padding: 0.5em;
         font-size: 20px;
         box-shadow: none;
