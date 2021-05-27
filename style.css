@@ -42,7 +42,7 @@ section {
 }
 
 #btn {
-    background-image: linear-gradient(140deg, #67eda4 10%, #2e6f51 100%);
+    background: #4CAF50;
     border-radius: 10px;
     color: #f3f3f3;
     text-shadow: 1px 1px rgba(0, 0, 0, 100%);
@@ -56,7 +56,7 @@ section {
 }
 
 #btn:hover {
-    background-image: linear-gradient(140deg, #2a5d41 10%, #112e20 100%);
+    background: #2e6f51;
 }
 
 #radio {
@@ -82,7 +82,6 @@ footer {
 }
 
 footer a {
-    text-decoration: none !important;
     color: #f3f3f3;
 }
 
