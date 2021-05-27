@@ -12,31 +12,47 @@ function verificar() {
         var genero = '';
         var img = document.createElement('img');
         img.setAttribute('id', ('foto'))
+
         if (fSex[0].checked) {
             genero = 'Homem'
-            if (idade > 0 && idade <= 14) {
+            if (idade >= 0 && idade <= 13) {
                 img.setAttribute('src', 'img\\babyboy.png');
-            } else if (idade < 21) {
+            } else if (idade >= 14 && idade <= 21) {
                 img.setAttribute('src', 'img\\youngboy.png');
-            } else if (idade < 50) {
+            } else if (idade <= 50) {
                 img.setAttribute('src', 'img\\adultmen.png');
             } else {
                 img.setAttribute('src', 'img\\oldmen.png');
             }
         } else if (fSex[1].checked) {
             genero = 'Mulher'
-            if (idade > 0 && idade <= 14) {
+            if (idade >= 0 && idade <= 13) {
                 img.setAttribute('src', 'img\\babygirl.png');
-            } else if (idade < 21) {
+            } else if (idade >= 14 && idade <= 21) {
                 img.setAttribute('src', 'img\\younggirl.png');
-            } else if (idade < 50) {
+            } else if (idade >= 22 && idade <= 50) {
                 img.setAttribute('src', 'img\\adultwoman.png');
             } else {
                 img.setAttribute('src', '\img\\oldwoman.png');
             }
         }
+
         res.style.textAlign = 'center';
-        res.innerHTML = `Você é um ${genero} com ${idade} anos. </br>`;
+
+        if (idade > 1) {
+            res.innerHTML = `Você é um ${genero} com ${idade} anos. </br>`;
+
+        } else {
+
+            res.innerHTML = `Você é um ${genero} com ${idade} ano. </br>`
+
+        }
+
+        if (idade > 110) {
+            img.setAttribute('src', 'img\\turtle.png');
+            res.innerHTML = `Você é uma tartaruga com ${idade} anos :) </br>`;
+        }
+
         res.appendChild(img);
 
     }
