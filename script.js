@@ -1,17 +1,36 @@
-function verificar() {
+function verificar(dia, mes, ano) {
+
     var data = new Date();
-    var ano = data.getUTCFullYear();
+    var dia = data.getDate();
+    var mes = data.getMonth() + 1;
+    var ano = data.getFullYear();
+    var fDia = window.document.getElementById('txtdia');
+    var fMes = window.document.getElementById('txtmes');
     var fAno = window.document.getElementById('txtano');
     var res = document.querySelector('div#res');
 
-    if (fAno.value.length == 0 || Number(fAno.value) > ano) {
+    if (fAno.value.length == 0 ||
+        Number(fAno.value) > ano ||
+        Number(fDia.value) == 0 ||
+        fDia.value.length > 2 ||
+        fMes.value.length > 2 ||
+        Number(fMes.value) == 0) {
         window.alert('[ERRO] Verifique os dados e tente novamente!');
     } else {
+
         var fSex = document.getElementsByName('radsex');
+        var diaIdade = Number(fDia.value);
+        var mesIdade = Number(fMes.value);
         var idade = ano - Number(fAno.value);
         var genero = '';
         var img = document.createElement('img');
         img.setAttribute('id', ('foto'))
+
+        if (mesIdade >= mes) {
+            if (diaIdade < dia + 1) {
+                idade = idade - 1;
+            }
+        }
 
         if (fSex[0].checked) {
             genero = 'Homem'

@@ -17,16 +17,22 @@
     <section>
 
         <div>
-            <p>Digite o Ano de Nascimento:
-                <input type="number" name="txtano" id="txtano" min="0" autofocus>
+            <p>Informe sua data de Nascimento:
+                <div>
+                    <input type="number" name="txtdia" id="txtdia" min="0" autofocus>
+                    <input type="number" name="txtmes" id="txtmes" min="0">
+                    <input type="number" name="txtano" id="txtano" min="0">
+                </div>
                 <hr>
             </p>
             <p>
-                Sexo:
-                <input type="radio" name="radsex" id="mas" checked>
-                <label for="mas">Masculino</label>
-                <input type="radio" name="radsex" id="fem">
-                <label for="fem">Feminino</label>
+                <p>Sexo:</p>
+                <div id="input">
+                    <input type="radio" name="radsex" id="mas" checked>
+                    <label for="mas">Masculino</label>
+                    <input type="radio" name="radsex" id="fem">
+                    <label for="fem">Feminino</label>
+                </div>
             </p>
             <p>
                 <input type="button" value="Calcular" id="btn" onclick="verificar()">
@@ -34,7 +40,7 @@
             <hr>
         </div>
         <div id="res">
-            <p> Preencha os dados acima para verificar o resultado! </p>
+            <p> Preencha os dados acima para calcular o resultado! </p>
         </div>
     </section>
     <footer>
