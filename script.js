@@ -38,7 +38,7 @@ function verificar(dia, mes, ano) {
             genero = 'Homem'
             if (idade >= 0 && idade <= 13) {
                 img.setAttribute('src', 'img\\babyboy.png');
-            } else if (idade >= 14 && idade <= 21) {
+            } else if (idade > 13 && idade <= 21) {
                 img.setAttribute('src', 'img\\youngboy.png');
             } else if (idade <= 50) {
                 img.setAttribute('src', 'img\\adultmen.png');
@@ -49,9 +49,9 @@ function verificar(dia, mes, ano) {
             genero = 'Mulher'
             if (idade >= 0 && idade <= 13) {
                 img.setAttribute('src', 'img\\babygirl.png');
-            } else if (idade >= 14 && idade <= 21) {
+            } else if (idade > 13 && idade <= 21) {
                 img.setAttribute('src', 'img\\younggirl.png');
-            } else if (idade >= 22 && idade <= 50) {
+            } else if (idade <= 50) {
                 img.setAttribute('src', 'img\\adultwoman.png');
             } else {
                 img.setAttribute('src', '\img\\oldwoman.png');
@@ -60,25 +60,25 @@ function verificar(dia, mes, ano) {
 
         res.style.textAlign = 'center';
 
-        if (idade > 2) {
+        if (idade >= 2) {
             res.innerHTML = `Você é um ${genero} com ${idade} anos. </br>`;
 
         } else if (idade == 1) {
 
-            res.innerHTML = `Você é um ${genero} com ${idade} ano. </br>`
+            res.innerHTML = `Você é um ${genero} com ${idade} ano. </br>`;
 
-        } else if (idade == 0) {
+        } else if (idade === 0) {
             messIdade = mes - mesIdade;
-            res.innerHTML = `Você é um ${genero} com ${messIdade} meses. </br>`
+            res.innerHTML = `Você é um ${genero} com ${messIdade} meses. </br>`;
         }
 
         if (idade > 110) {
             img.setAttribute('src', 'img\\turtle.png');
             res.innerHTML = `Você é uma tartaruga com ${idade} anos :) </br>`;
+
         }
 
         res.appendChild(img);
-
     }
 
 }
