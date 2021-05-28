@@ -27,7 +27,7 @@ function verificar(dia, mes, ano) {
         img.setAttribute('id', ('foto'))
 
         if (mesIdade >= mes) {
-            if (diaIdade < dia + 1) {
+            if (diaIdade < dia + 1 && idade != 0) {
                 idade = idade - 1;
             }
         }
@@ -58,13 +58,16 @@ function verificar(dia, mes, ano) {
 
         res.style.textAlign = 'center';
 
-        if (idade > 1) {
+        if (idade > 2) {
             res.innerHTML = `Você é um ${genero} com ${idade} anos. </br>`;
 
-        } else {
+        } else if (idade == 1) {
 
             res.innerHTML = `Você é um ${genero} com ${idade} ano. </br>`
 
+        } else if (idade == 0) {
+            messIdade = mesIdade - mes;
+            res.innerHTML = `Você é um ${genero} com ${messIdade} meses. </br>`
         }
 
         if (idade > 110) {
