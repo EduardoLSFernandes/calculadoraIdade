@@ -12,9 +12,11 @@ function verificar(dia, mes, ano) {
     if (fAno.value.length == 0 ||
         Number(fAno.value) > ano ||
         Number(fDia.value) == 0 ||
-        fDia.value.length > 2 ||
-        fMes.value.length > 2 ||
-        Number(fMes.value) == 0) {
+        fDia.value.length == 0 ||
+        Number(fDia.value) > 31 ||
+        Number(fMes.value) == 0 ||
+        fMes.value.length == 0 ||
+        Number(fMes.value) > 12) {
         window.alert('[ERRO] Verifique os dados e tente novamente!');
     } else {
 
@@ -66,7 +68,7 @@ function verificar(dia, mes, ano) {
             res.innerHTML = `Você é um ${genero} com ${idade} ano. </br>`
 
         } else if (idade == 0) {
-            messIdade = mesIdade - mes;
+            messIdade = mes - mesIdade;
             res.innerHTML = `Você é um ${genero} com ${messIdade} meses. </br>`
         }
 
