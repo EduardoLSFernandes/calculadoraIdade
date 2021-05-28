@@ -74,7 +74,7 @@
     }
     
     #btn {
-        background: #3d6a3f;
+        background: #4f5a97;
         border-radius: 10px;
         color: #f3f3f3;
         text-shadow: 1px 1px rgba(0, 0, 0, 100%);
@@ -88,7 +88,7 @@
     }
     
     #btn:hover {
-        background: #679769;
+        background: #283164;
     }
     
     #radio {
@@ -142,10 +142,13 @@
         }
     }
     
-    @media (max-width: 290px) {
+    @media (max-width: 300px) {
         #input {
             width: auto;
-            font-size: 19px;
+            font-size: 18px;
+        }
+        section {
+            height: 600px;
         }
     }
     /*fim responsivo*/
